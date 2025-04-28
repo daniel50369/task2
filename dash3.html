@@ -2,18 +2,23 @@
 <html lang="he">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מערכת 3 - נתוני מכירות כלליים</title>
+    <title>מערכת 3 - ניתוח מכירות כלליות</title>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #00c6ff, #0072ff);
             text-align: center;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+            font-family: Arial, sans-serif;
             direction: rtl;
+        }
+        #vizContainer {
+            width: 1200px;
+            height: 800px;
+            margin: 30px auto;
         }
         .nav-button {
             margin: 20px;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            background: linear-gradient(to right, #00c6ff, #0072ff);
             border: none;
             color: white;
             padding: 10px 20px;
@@ -26,14 +31,15 @@
 <body>
     <h1>מערכת 3 - ניתוח נתוני מכירות כלליים</h1>
     <button class="nav-button" onclick="location.href='index.html'">חזרה לעמוד הראשי</button>
-    <div id="vizContainer" style="width: 1000px; height: 800px; margin: auto; margin-top: 30px;"></div>
-    <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
+    <div id="vizContainer"></div>
+
     <script>
-        var containerDiv = document.getElementById("vizContainer"),
-            url = "https://public.tableau.com/views/Book3_17458318947720/sheet11";
+        var containerDiv = document.getElementById("vizContainer");
+        var url = "https://public.tableau.com/views/Book3_17458318947720/sheet11";
         var options = {
             hideTabs: true,
-            width: "1000px",
+            width: "1200px",
             height: "800px"
         };
         var viz = new tableau.Viz(containerDiv, url, options);
